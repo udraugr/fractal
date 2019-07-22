@@ -1,0 +1,6 @@
+*DS_S*
+*.o
+*.a
+fractal
+*.swp
+*.dSYM
