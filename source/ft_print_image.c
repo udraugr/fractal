@@ -6,7 +6,7 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 14:09:09 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 16:28:16 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/25 20:13:15 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,23 @@ static int			ft_get_color(t_screen *screen, t_complex_numb *current)
 	fts[1] = &mandelbrot_print;
 	fts[2] = &burning_ship_print;
 	return (fts[screen->type - 1](screen, current));
+}
+
+static void			ft_color_fill(t_screen *screen, int a, int bi, int color)
+{
+	int				r;
+	int				g;
+	int				b;
+
+	r = (unsigned char)color * screen->rgb[0];
+	r = (r > 255) ? 255 : r;
+	g = (unsigned char)color * screen->rgb[1];
+	g = (g > 255) ? 255 : g;
+	b = (unsigned char)color * screen->rgb[2];
+	b = (b > 255) ? 255 : b;
+	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4] = b;
+	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 1] = g;
+	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 2] =	r;
 }
 
 void				ft_print_image(t_screen *screen)
@@ -37,12 +54,12 @@ void				ft_print_image(t_screen *screen)
 		a = -1;
 		while (++a < 800)
 		{
-			current.a = ((long double)((a - 400) + screen->shift_x)) / (800.0 / screen->zoom);
-			current.bi = ((long double)((bi - 400) + screen->shift_y)) / (800.0 / screen->zoom);
+			current.a = ((long double)((a - 400) + (int)screen->shift_x)) /
+									(800.0 / screen->zoom);
+			current.bi = ((long double)((bi - 400) + (int)screen->shift_y)) /
+									(800.0 / screen->zoom);
 			color = ft_get_color(screen, &current);
-			(screen->mlx_data_addr)[bi * 800 * 4 + a * 4] = (char)color;
-			(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 1] = (char)color;
-			(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 2] = (char)color;
+			ft_color_fill(screen, a, bi, color);
 		}
 	}
 	mlx_put_image_to_window(screen->mlx_ptr,

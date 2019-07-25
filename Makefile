@@ -39,11 +39,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@/bin/rm -f $(OBJ)
-	@make -C 
+	@make -C ./libftprintf fclean
 	@printf "Remove objects and libraries!\n"
 
 fclean:	clean
 	@/bin/rm -f $(NAME)
 	@printf "Remove $(NAME)!\n"
 
-re: fclean
+re: fclean all

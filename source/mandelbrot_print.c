@@ -6,7 +6,7 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:45:48 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 14:07:39 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/25 18:41:06 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int						mandelbrot_print(t_screen *screen, t_complex_numb *current)
 	last_res = ft_range(current);
 	first_iter.a = current->a;
 	first_iter.bi = current->bi;
-	while (iter < screen->iter && last_res <= 2.0L)
+	while (iter < screen->iter && iter < 255 && last_res <= 2.0L)
 	{
 		tmp_a = current->a * current->a - current->bi * current->bi + first_iter.a;
 		tmp_bi = 2 * current->a * current->bi + first_iter.bi;

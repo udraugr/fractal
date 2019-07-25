@@ -6,9 +6,19 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 15:57:03 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 16:17:08 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/25 20:10:59 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** RED_PLUS 7 Num Lock
+** GREEN_PLUS 8 Num Lock
+** BLUE_PLUS 9 Num_lock
+**
+** RED_MINUS 4 Num Lock
+** GREEN_MINUS 5 Num Lock
+** BLUE_MINUS 6 Num_lock
+*/
 
 #ifndef FRACTAL_H
 # define FRACTAL_H
@@ -29,7 +39,15 @@
 # define PLUS 69
 # define MINUS 78
 # define SCROLL_UP 4
-# define SCROLL_DOWN 5 
+# define SCROLL_DOWN 5
+# define LEFT_BUTTON 1
+
+# define RED_PLUS 89
+# define GREEN_PLUS 91
+# define BLUE_PLUS 92
+# define RED_MINUS 86
+# define GREEN_MINUS 87
+# define BLUE_MINUS 88
 
 # define SUCCESS 0
 # define FAIL 1
@@ -49,8 +67,9 @@ typedef struct		s_screen
 	int				type;
 	int				iter;
 	long double		zoom;
-	int				shift_x;
-	int				shift_y;
+	float			shift_x;
+	float			shift_y;
+	unsigned char	rgb[3];
 	t_complex_numb	*c_for_julia;
 
 }					t_screen;
