@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia_print.c                                      :+:      :+:    :+:   */
+/*   burning_ship_print.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 18:05:11 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 16:35:39 by udraugr-         ###   ########.fr       */
+/*   Created: 2019/07/25 14:05:46 by udraugr-          #+#    #+#             */
+/*   Updated: 2019/07/25 14:55:02 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractal.h"
 
-int					julia_print(t_screen *screen, t_complex_numb *current)
+int						burning_ship_print(t_screen *screen, t_complex_numb *current)
 {
-	int				iter;
-	long double		last_res;
-	long double		tmp_a;
-	long double		tmp_bi;
+	int					iter;
+	t_complex_numb		first_iter;
+	long double			last_res;
+	long double			tmp_a;
+	long double			tmp_bi;
 
 	iter = 0;
 	last_res = ft_range(current);
+	first_iter.a = current->a;
+	first_iter.bi = current->bi;
 	while (iter < screen->iter && last_res <= 2.0L)
 	{
-		tmp_a = current->a * current->a - current->bi * current->bi + ((t_complex_numb *)screen->c_for_julia)->a;
-		tmp_bi = 2 * current->a * current->bi + ((t_complex_numb *)screen->c_for_julia)->bi;
+		tmp_a = current->a * current->a - current->bi * current->bi + first_iter.a;
+		tmp_bi = 2 * current->a * current->bi + first_iter.bi;
+		tmp_a = (tmp_a < 0.0L) ? tmp_a * -1.0L : tmp_a;
+		tmp_bi = (tmp_bi < 0.0L) ? tmp_bi * -1.0L : tmp_bi;
 		current->a = tmp_a;
 		current->bi = tmp_bi;
 		last_res = ft_range(current);

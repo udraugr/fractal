@@ -4,13 +4,18 @@ INCL := include
 
 VPATH := source
 
-SRC :=	ft_init.c\
-		ft_print_fractal.c\
-		main.c\
-		ft_exit.c\
+SRC :=	ft_destroy_t_screen.c\
 		ft_error.c\
+		ft_exit.c\
+		ft_init.c\
+		ft_print_fractal.c\
+		ft_range.c\
 		julia_print.c\
-		ft_range.c
+		main.c\
+		mandelbrot_print.c\
+		ft_print_image.c\
+		burning_ship_print.c\
+		ft_zoom.c
 
 OBJ := $(patsubst %.c, %.o, $(SRC))
 

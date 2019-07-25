@@ -6,15 +6,16 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 18:54:31 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/21 19:07:38 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/25 14:35:18 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractal.h"
 
-void		ft_exit(t_screen *screen)
+int			ft_exit(int key, t_screen *screen)
 {
-	screen = 0;
-	//ft_destroy_t_screen(screen);
+	key = 0;
+	ft_destroy_t_screen(&screen);
 	exit(0);
+	return (0);
 }
