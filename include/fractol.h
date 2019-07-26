@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal.h                                          :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 15:57:03 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 20:10:59 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:39:39 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 ** BLUE_MINUS 6 Num_lock
 */
 
-#ifndef FRACTAL_H
-# define FRACTAL_H
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
 # include "../libftprintf/ft_printf/printf.h"
 # include <math.h>
@@ -71,10 +71,11 @@ typedef struct		s_screen
 	float			shift_y;
 	unsigned char	rgb[3];
 	t_complex_numb	*c_for_julia;
+	int				mod_for_julia;
 
 }					t_screen;
 
-void				ft_print_fractal(int type);
+void				ft_print_fractol(int type);
 
 t_screen			*ft_init(int type);
 void				ft_destroy_t_screen(t_screen **screen);
@@ -83,7 +84,9 @@ long double			ft_range(t_complex_numb *current);
 
 void				ft_print_image(t_screen *screen);
 
+int					ft_button(int button, int x, int y, t_screen *screen);
 int					ft_zoom(int buttom, int x, int y, t_screen *screen);
+int					julia_c_mouse_move(int x, int y, t_screen *screen);
 
 int					julia_print(t_screen *screen,
 								t_complex_numb *current);

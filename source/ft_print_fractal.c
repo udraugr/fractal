@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_fractal.c                                 :+:      :+:    :+:   */
+/*   ft_print_fractol.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 17:46:55 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 20:39:22 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:38:51 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 static int		ft_color_managment(t_screen *screen, int key)
 {
 	if (key == RED_PLUS)
 		screen->rgb[0] = (screen->rgb[0] + 1 < 256) ?
-												screen->rgb[0] + 1 : 255
+												screen->rgb[0] + 1 : 255;
 	else if (key == GREEN_PLUS)
 		screen->rgb[1] = (screen->rgb[1] + 1 < 256) ?
 												screen->rgb[1] + 1 : 255;
@@ -59,7 +59,7 @@ static int		ft_key(int key, t_screen *screen)
 	return (0);
 }
 
-void			ft_print_fractal(int type)
+void			ft_print_fractol(int type)
 {
 	t_screen	*screen;
 
@@ -67,7 +67,9 @@ void			ft_print_fractal(int type)
 		ft_error(1);
 	ft_print_image(screen);
 	mlx_hook(screen->win_ptr, 2, 1L << 0, ft_key, (void *)screen);
-	mlx_hook(screen->win_ptr, 4, 1L << 2, ft_zoom, (void *)screen);
+	mlx_hook(screen->win_ptr, 4, 1L << 2, ft_button, (void *)screen);
+	mlx_hook(screen->win_ptr, 6, 1L << 6,
+								julia_c_mouse_move, (void *)screen);
 	mlx_hook(screen->win_ptr, 17, 1L << 17, ft_exit, (void *)screen);
 	mlx_loop(screen->mlx_ptr);
 }

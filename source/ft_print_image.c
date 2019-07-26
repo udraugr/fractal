@@ -6,11 +6,11 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 14:09:09 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 20:13:15 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:36:45 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 static int			ft_get_color(t_screen *screen, t_complex_numb *current)
 {
@@ -28,23 +28,23 @@ static void			ft_color_fill(t_screen *screen, int a, int bi, int color)
 	int				g;
 	int				b;
 
-	r = (unsigned char)color * screen->rgb[0];
+	r = color >> 16;
 	r = (r > 255) ? 255 : r;
-	g = (unsigned char)color * screen->rgb[1];
+	g = (color >> 8) % 256;
 	g = (g > 255) ? 255 : g;
-	b = (unsigned char)color * screen->rgb[2];
+	b = color % 256;
 	b = (b > 255) ? 255 : b;
 	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4] = b;
 	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 1] = g;
-	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 2] =	r;
+	(screen->mlx_data_addr)[bi * 800 * 4 + a * 4 + 2] = r;
 }
 
 void				ft_print_image(t_screen *screen)
 {
-    int				bi;
-    int				a;
-    t_complex_numb	current;
-    int				color;
+	int				bi;
+	int				a;
+	t_complex_numb	current;
+	int				color;
 
 	current.a = 0;
 	current.bi = 0;

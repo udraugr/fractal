@@ -6,11 +6,11 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 18:54:31 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 14:35:18 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:33:46 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 int			ft_exit(int key, t_screen *screen)
 {

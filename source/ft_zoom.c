@@ -6,11 +6,11 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 14:53:34 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 18:26:40 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:34:37 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 int				ft_zoom(int buttom, int x, int y, t_screen *screen)
 {

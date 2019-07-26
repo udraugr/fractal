@@ -6,11 +6,11 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 18:24:29 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/25 18:48:44 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:34:31 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 static void		ft_fill_new_t_screen(t_screen *new, int type)
 {
@@ -24,7 +24,7 @@ static void		ft_fill_new_t_screen(t_screen *new, int type)
 	new->rgb[0] = 2;
 	new->rgb[1] = 1;
 	new->rgb[2] = 5;
-
+	new->mod_for_julia = 0;
 }
 
 static int		ft_system_calls(t_screen *new)
@@ -40,7 +40,7 @@ static int		ft_system_calls(t_screen *new)
 				(t_complex_numb *)malloc(sizeof(t_complex_numb))) ||
 		!(new->mlx_ptr = mlx_init()) ||
 		!(new->win_ptr = mlx_new_window(new->mlx_ptr,
-												800, 800, "Fractal")) ||
+												800, 800, "fractol")) ||
 		!(new->image_ptr = mlx_new_image(new->mlx_ptr, 800, 800)) ||
 		!(new->mlx_data_addr = mlx_get_data_addr(new->image_ptr,
 												&bits_per_pixel,

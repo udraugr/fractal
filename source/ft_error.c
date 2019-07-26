@@ -6,11 +6,11 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 18:44:36 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/21 18:45:55 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:33:35 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractal.h"
+#include "../include/fractol.h"
 
 void		ft_error(int error)
 {
