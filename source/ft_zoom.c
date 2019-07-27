@@ -6,7 +6,7 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 14:53:34 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/26 12:34:37 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/27 13:59:00 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int				ft_zoom(int buttom, int x, int y, t_screen *screen)
 												screen->shift_y * 1.25;
 		screen->zoom *= 0.8L;
 	}
-	ft_print_image(screen);
+	ft_prepare(screen);
 	return (0);
 }

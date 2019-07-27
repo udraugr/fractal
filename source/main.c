@@ -6,7 +6,7 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 15:56:26 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/26 12:38:05 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/26 15:38:50 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void			ft_print_set_fractols(void)
 {
 	ft_putstr("\t\t1)Julia\n\t\t2)Mandelbrot\n\t\t3)Burning_Ship\n");
+	ft_putstr("\t\t4)Newton\n\t\t5)Newton_pro\n");
 }
 
 static void			ft_help(void)
@@ -32,6 +33,10 @@ static int			ft_name_detector(char *name_of_fractol)
 		return (MANDELBROT);
 	else if (ft_strequ(name_of_fractol, "burning_ship"))
 		return (BURNING_SHIP);
+	else if (ft_strequ(name_of_fractol, "newton"))
+		return (NEWTON);
+	else if (ft_strequ(name_of_fractol, "newton_pro"))
+		return (NEWTON_PRO);
 	else
 		return (0);
 }

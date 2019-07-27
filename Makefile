@@ -14,10 +14,13 @@ SRC :=	burning_ship_print.c\
 		ft_print_image.c\
 		ft_range.c\
 		ft_zoom.c\
-		julia_c_mouse_move.c\
+		mouse_move.c\
 		julia_print.c\
 		main.c\
-		mandelbrot_print.c
+		mandelbrot_print.c\
+		newton_print.c\
+		newton_pro_print.c\
+		ft_button_realise.c
 
 OBJ := $(patsubst %.c, %.o, $(SRC))
 

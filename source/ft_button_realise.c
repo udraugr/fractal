@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_button.c                                        :+:      :+:    :+:   */
+/*   ft_button_realise.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 11:39:30 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/27 16:34:20 by udraugr-         ###   ########.fr       */
+/*   Created: 2019/07/27 16:19:40 by udraugr-          #+#    #+#             */
+/*   Updated: 2019/07/27 16:35:58 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int				ft_button(int button, int x, int y, t_screen *screen)
+int			ft_button_realise(int button, int x, int y, t_screen *screen)
 {
-	if (button == LEFT_BUTTON && screen->type == JULIA)
+	int		a;
+
+	if (button == RIGHT_BUTTON)
 	{
-		screen->mod_for_julia = !screen->mod_for_julia;
-	}
-	else if (button == RIGHT_BUTTON)
-	{
-		screen->shift_begin[0] = x;
-		screen->shift_begin[1] = y;
-		screen->mod_teleport = 1;
-	}
-	else if (button == SCROLL_UP || button == SCROLL_DOWN)
-	{
-		ft_zoom(button, x, y, screen);
+		a = x - y;
+		screen->mod_teleport = 0;
 	}
 	return (SUCCESS);
 }

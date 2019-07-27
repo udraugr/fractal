@@ -6,7 +6,7 @@
 /*   By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 18:24:29 by udraugr-          #+#    #+#             */
-/*   Updated: 2019/07/26 12:34:31 by udraugr-         ###   ########.fr       */
+/*   Updated: 2019/07/27 16:24:36 by udraugr-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ static void		ft_fill_new_t_screen(t_screen *new, int type)
 	new->iter = 100;
 	new->c_for_julia->a = 0.0L;
 	new->c_for_julia->bi = 0.0L;
-	new->rgb[0] = 2;
+	new->rgb[0] = 5;
 	new->rgb[1] = 1;
-	new->rgb[2] = 5;
+	new->rgb[2] = 2;
 	new->mod_for_julia = 0;
+	new->mod_teleport = 0;
+	new->shift_begin[0] = 0;
+	new->shift_begin[1] = 0;
 }
 
 static int		ft_system_calls(t_screen *new)
