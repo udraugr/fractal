@@ -28,14 +28,14 @@ FLAGS := -Wall -Wextra -Werror
 
 LIB := libftprintf
 
-FW = -lmlx -framework OpenGl -framework AppKit
+FW = -framework OpenGl -framework AppKit
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@/bin/rm -f ./libftprintf/libftprintf.a
 	@make -C ./libftprintf
-	@gcc $(FLAGS) -I $(INCL) -I /usr/local/include -L $(LIB) -lftprintf -L /usr/local/lib $(FW) $(OBJ) -o $(NAME)
+	@gcc $(FLAGS) -I $(INCL) -L $(LIB) -lftprintf -L . -lmlx $(FW) $(OBJ) -o $(NAME)
 	@printf "Make your $(NAME)!\n"
 
 %.o: %.c
