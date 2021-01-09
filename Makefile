@@ -35,16 +35,18 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@/bin/rm -f ./libftprintf/libftprintf.a
 	@make -C ./libftprintf
-	@gcc $(FLAGS) -I $(INCL) -L $(LIB) -lftprintf -L . -lmlx $(FW) $(OBJ) -o $(NAME)
+	@make -C minilibx_macos
+	@clang $(FLAGS) -I $(INCL) -L $(LIB) -lftprintf -L minilibx_macos -lmlx $(FW) $(OBJ) -o $(NAME)
 	@printf "Make your $(NAME)!\n"
 
 %.o: %.c
-	@gcc $(FLAGS) -c $< -o $@
+	@clang $(FLAGS) -c $< -o $@
 	@printf "Now compile $<\n"
 
 clean:
 	@/bin/rm -f $(OBJ)
 	@make -C ./libftprintf fclean
+	@make -C ./minilibx_macos clean
 	@printf "Remove objects and libraries!\n"
 
 fclean:	clean

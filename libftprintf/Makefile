@@ -6,7 +6,7 @@
 #    By: udraugr- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/17 17:34:34 by udraugr-          #+#    #+#              #
-#    Updated: 2019/06/22 15:38:04 by udraugr-         ###   ########.fr        #
+#    Updated: 2021/01/09 18:28:37 by udraugr-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,7 @@ $(NAME): $(OBJ_LIB) $(OBJ_PRINTF)
 	@echo "Create a library!"
 
 %.o: %.c
-	gcc $(FLAGS) -I ft_printf -c $< -o $@
+	clang $(FLAGS) -I ft_printf -c $< -o $@
 
 clean:
 	@/bin/rm -f $(OBJ_PRINTF) $(OBJ_LIB)
