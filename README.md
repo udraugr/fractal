@@ -38,7 +38,7 @@
 ## Julia с добавлением цветов
 ![Julia 2](https://github.com/udraugr/fractal/raw/master/./pictures/Julia%20colors.png)
 
-## Julia с измененным комплексный параметр
+## Julia с измененным комплексным параметром
 ![Julia 3](https://github.com/udraugr/fractal/raw/master/./pictures/julia%20change%20C%202.png)
 
 ## Mandelbrot
