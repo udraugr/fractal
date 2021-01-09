@@ -4,7 +4,7 @@
 [2]: https://github.com/udraugr/fractal/new/master?readme=1#fractal---displaying-a-fractal "EN"
 
 # FRACTAL - отображение фрактала
-В этом проекте мы знакомимся с комплексными числами и фракталами.
+Знакомство с комплексными числами и фракталами.
 Реализованы фракталы:
 * Julia
 * Mandelbrot
@@ -27,7 +27,7 @@
 * Стрелочки **влево/вправо** перемещают изображение влево/вправо по оси OX
 * Прокручивание колёсика мыши **вверх/вниз** приближает/отдаляет изображение к курсору
 * *Зажатая левая кнопка мыши* перетаскивает изображение
-* **Работает только для Julia** *Нажатие на правую кнопку мыши* позволяет менять мышкой базу(C), повторное нажатие зафиксирует базу(C).
+* **Работает только для Julia** *Нажатие на правую кнопку мыши* позволяет менять мышкой комплексный параметр, повторное нажатие зафиксирует его.
 * *На numpad* цифры **7** и **4** увеличивает и уменьшает количество красного в фрактале
 * **8** и **5** -- увеличивает и уменьшает количество зелёного в фрактале
 * **9** и **6** -- увеличивает и уменьшает количество синего в фрактале
@@ -38,7 +38,7 @@
 ## Julia с добавлением цветов
 ![Julia 2](https://github.com/udraugr/fractal/raw/master/./pictures/Julia%20colors.png)
 
-## Julia с измененной базой(C)
+## Julia с измененным комплексный параметр
 ![Julia 3](https://github.com/udraugr/fractal/raw/master/./pictures/julia%20change%20C%202.png)
 
 ## Mandelbrot
@@ -57,7 +57,7 @@
 Этот проект полностью написан в школе программирования 21, и принадлежит ей.
 
 # FRACTAL - displaying a fractal
-In this project, we are introduced to complex numbers and fractals.
+An introduction to complex numbers and fractals.
 The fractals are implemented:
 * Julia
 * Mandelbrot
@@ -80,7 +80,7 @@ In order to build the project, you need to go to the root directory of the proje
 * **Left/right arrows** move the image left/right on the OX axis
 * *Scrolling the mouse wheel* **up/Down** moves the image closer/depart the cursor
 * **Pressing the left mouse button** drags the image
-* **Works only for Julia** *Pressing the right mouse button* allows you to change the mouse base(C), pressing it again will fix the base(C).
+* **Works only for Julia** *Pressing the right mouse button* allows you to change the mouse complex parameter, pressing it again will fix it.
 * *On the numpad* the numbers **7** and **4** increase and decrease the amount of red in the fractal
 * **8** and **5** -- increases and decreases the amount of green in the fractal
 * **9** and **6** -- increases and decreases amount of blue in a fractal
@@ -91,7 +91,7 @@ In order to build the project, you need to go to the root directory of the proje
 ## Julia with the addition of colors
 ![Julia 2](https://github.com/udraugr/fractal/raw/master/./pictures/Julia%20colors.png)
 
-## Julia with a modified base(C)
+## Julia with a modified complex parameter
 ![Julia 3](https://github.com/udraugr/fractal/raw/master/./pictures/julia%20change%20C%202.png)
 
 ## Mandelbrot
